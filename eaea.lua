@@ -2,6 +2,9 @@ local Rating, TestsRan = 0, 1
 local conn
 local Identity, Identity2
 conn = game:GetService("LogService").MessageOut:Connect(function(message, messageType)
+ if message:find("Current identity is") then
+			Identity = message
+		end
  if Check2 then
    Identity2 = message
   conn:Disconnect()
